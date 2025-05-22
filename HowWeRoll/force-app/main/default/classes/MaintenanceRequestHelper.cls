@@ -1,9 +1,4 @@
-public with sharing class MaintenanceRequestHelper {
-    
-    public static void updateWorkOrders() {
-        // TODO: Complete the method to update workorders
-        
-    }   
+public with sharing class MaintenanceRequestHelper {  
     
     public static void maintenanceRequest(Map<Id,Case> request){
 
@@ -19,9 +14,6 @@ public with sharing class MaintenanceRequestHelper {
         List<Equipment_Maintenance_Item__c> equipmentMaintenanceItems = new  List<Equipment_Maintenance_Item__c>([
             SELECT Maintenance_Request__c ,Equipment__c
             FROM Equipment_Maintenance_Item__c ]);
-
-        System.debug('equipmentMaintenanceItems = '+equipmentMaintenanceItems.size());
-        System.debug('equipmentMaintenanceItems = '+equipmentMaintenanceItems);
 
         Map<Id, Product2> equipmentList = new  Map<Id,Product2>([
             SELECT Id, Maintenance_Cycle__c
